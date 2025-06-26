@@ -16,7 +16,7 @@ def main():
     
     if len(sys.argv) == 1:
         print("Please provide a path to the book file.")
-        print("Usage: python main.py <path_to_book_file>")
+        print("Usage: python3 main.py <path_to_book>")
         sys.exit(1)
 
     path_to_file = sys.argv[1]
