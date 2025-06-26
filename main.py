@@ -2,6 +2,8 @@ from stats import count_words
 from stats import count_characters
 from stats import sort_character_dic
 
+import sys
+
 def get_book_test(path):
     content = ""
 
@@ -11,7 +13,13 @@ def get_book_test(path):
     return content
 
 def main():
-    path_to_file = "./books/frankenstein.txt"
+    
+    if len(sys.argv) == 1:
+        print("Please provide a path to the book file.")
+        print("Usage: python main.py <path_to_book_file>")
+        sys.exit(1)
+
+    path_to_file = sys.argv[1]
     book_content = get_book_test(path_to_file)
     word_count = count_words(book_content)
     characters_count = count_characters(book_content)
